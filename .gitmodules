@@ -1,0 +1,8 @@
+[submodule "docs"]
+	path = docs
+	url = https://github.com/exastro-suite/docs.git
+	branch = master
+[submodule "oase-docs"]
+	path = oase-docs
+	url = https://github.com/exastro-suite/oase-docs.git
+	branch = master
