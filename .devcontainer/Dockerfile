@@ -23,7 +23,8 @@ RUN set -eux && \
 RUN set -eux && \
     mkdir -p /workspace
 
-RUN wget https://github.com/jgm/pandoc/releases/download/2.19.2/pandoc-2.19.2-1-amd64.deb -O /tmp/pandoc.deb && \
+RUN curl -kL https://github.com/jgm/pandoc/releases/download/2.19.2/pandoc-2.19.2-1-amd64.deb \
+     -o /tmp/pandoc.deb -x $HTTP_PROXY && \
     dpkg -i /tmp/pandoc.deb
 
 WORKDIR /workspace
