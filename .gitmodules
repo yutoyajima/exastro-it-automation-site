@@ -1,7 +1,7 @@
 [submodule "exastro-it-automation-docs"]
 	path = exastro-it-automation-docs
 	url = https://github.com/exastro-suite/exastro-it-automation-docs.git
-	branch = master
+	branch = main
 [submodule "docs"]
 	path = docs
 	url = https://github.com/exastro-suite/docs.git
