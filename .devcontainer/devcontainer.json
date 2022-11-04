@@ -1,0 +1,49 @@
+{
+	"name": "exastro-it-automation-site",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"args": {
+			"HTTP_PROXY": "${localEnv:HTTP_PROXY}",
+		}
+	},
+	"settings": {
+		"terminal.integrated.profiles.linux": {
+			"bash": {
+				"path": "/bin/bash"
+			}
+		},
+		"terminal.integrated.defaultProfile.linux": "bash",
+	},
+	"extensions": [
+		"MS-CEINTL.vscode-language-pack-ja",
+		"ms-python.python",
+		"donjayamanne.githistory",
+		"eamodio.gitlens",
+		"mhutchie.git-graph",
+		"lextudio.restructuredtext",
+		"lextudio.restructuredtext-pack",
+		"trond-snekvik.simple-rst",
+		"ms-vscode.live-server",
+		"searKing.preview-vscode",
+		"hediet.vscode-drawio",
+		"nopeslide.vscode-drawio-plugin-mermaid",
+	],
+	"onCreateCommand": "update-ca-certificates && bash /tmp/install_talisman.bash",
+	"postCreateCommand": "sphinx-autobuild /workspace/exastro-it-automation-docs/documentation /workspace/exastro-it-automation-docs/documentation/html",
+	"workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+	"mounts": [
+		"source=/root/.netrc,target=/root/.netrc,type=bind",
+		"source=/root/.gitconfig,target=/root/.gitconfig,type=bind",
+		"source=/usr/share/pki/ca-trust-source/anchors/ZscalerRootCertificate.cer,target=/usr/local/share/ca-certificates/ZscalerRootCertificate.crt,type=bind",
+	],
+	"workspaceFolder": "/workspace",
+	"containerEnv": {
+		"HTTP_PROXY": "${localEnv:HTTP_PROXY}",
+		"http_proxy": "${localEnv:HTTP_PROXY}",
+		"HTTPS_PROXY": "${localEnv:HTTP_PROXY}",
+		"https_proxy": "${localEnv:HTTP_PROXY}",
+		"NO_PROXY": "localhost,127.0.0.1",
+		"no_proxy": "localhost,127.0.0.1",
+		"NODE_EXTRA_CA_CERTS": "/usr/local/share/ca-certificates/ZscalerRootCertificate.crt"
+	},
+}
