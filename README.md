@@ -37,10 +37,6 @@
    # サブモジュールを自身のリポジトリに置き換える
    cd ~/${MY_GITHUB_ACCOUNT}/exastro-it-automation-site
    sed -i -e "s|https://github.com/exastro-suite|https://github.com/${MY_GITHUB_ACCOUNT}|g" .gitmodules
-
-   # リモートリポジトリと動機
-   git submodule sync
-   git submodule foreach git pull
    ```
 
 ## ドキュメントの作成・更新
