@@ -28,7 +28,8 @@
 		"hediet.vscode-drawio",
 		"nopeslide.vscode-drawio-plugin-mermaid",
 	],
-	"onCreateCommand": "update-ca-certificates && bash /tmp/install_talisman.bash && cd /workspace/docs && git checkout master && cd /workspace/exastro-it-automation-docs/ && git checkout main cd /workspace/",
+	// "onCreateCommand": "update-ca-certificates && bash /tmp/install_talisman.bash && cd /workspace && git submodule update --init --recursive && cd /workspace/docs && git checkout master && cd /workspace/exastro-it-automation-docs/ && git checkout main cd /workspace/",
+	"onCreateCommand": "update-ca-certificates && cd /workspace && git submodule update --init --recursive && cd /workspace/docs && git checkout master && cd /workspace/exastro-it-automation-docs/ && git checkout main && cd /workspace/",
 	"postCreateCommand": "sphinx-autobuild /workspace/exastro-it-automation-docs/documentation /workspace/exastro-it-automation-docs/documentation/html",
 	"workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
 	"mounts": [
