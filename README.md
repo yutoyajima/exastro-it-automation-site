@@ -4,11 +4,10 @@
 
 1. 自身の開発PC上にVSCodeがインストール済みであること
 1. VSCodeから開発サーバに対して拡張機能「Remote - SSH」を使ってログインできること
-1. 開発サーバは、CentOS 7であること
+1. 開発サーバは、CentOS 7もしくはAlmaLinuxであること
 1. 開発サーバ上にDocker環境が構築済みであること
 1. 開発サーバは個人用に設定済みの環境であること
    1. `~/.gitconfig` の設定が個人のものとなっていること
-   1. `~/.netrc` にGitのログイン情報が入っていること
 
 ## 各リポジトリをフォーク
 
@@ -45,9 +44,6 @@
 2. 「ファイル」-「ファイルでワークスペースを開く」から上記でクローンしたexastro-it-automation-site内にある「exastro-it-automation-site.code-workspace」を開く。
 3. 左下のRemote接続用の「><」アイコンをクリックし、「Reopen in Container」を開く。
 4. あとはexastro-it-automation-docs配下のファイルを編集する。
-
-## Talismanのセットアップ
-環境に合わせて適当に設定をする。
 
 ## 編集中のドキュメントの確認
 下記の拡張機能をインストールし、プレビュー画面で確認する。
