@@ -36,7 +36,7 @@
 		"source=${localEnv:TALISMAN_HOME},target=/root/.talisman/bin,type=bind",
 		"source=/mnt/mainte/talisman,target=/mnt/mainte/talisman,type=bind",
 		// "source=/root/.netrc,target=/root/.netrc,type=bind",
-		"source=/root/.gitconfig,target=/root/.gitconfig,type=bind",
+		"source=${localEnv:HOME}/.gitconfig,target=/root/.gitconfig,type=bind",
 		"source=/usr/share/pki/ca-trust-source/anchors/ZscalerRootCertificate.cer,target=/usr/local/share/ca-certificates/ZscalerRootCertificate.crt,type=bind",
 	],
 	"workspaceFolder": "/workspace",
